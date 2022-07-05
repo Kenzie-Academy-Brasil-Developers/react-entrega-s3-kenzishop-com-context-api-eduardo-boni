@@ -11,7 +11,7 @@ import bucks from "../assets/bucks.jpeg";
 export const ProductsContext = createContext([]);
 
 export const ProductsProvider = ({ children }) => {
-    const [products] = useState([
+    const [products, setProducts] = useState([
         {
             id: 1,
             category: "T-shirts",
@@ -71,7 +71,7 @@ export const ProductsProvider = ({ children }) => {
     ])
 
     return (
-        <ProductsContext.Provider value={{products}}>
+        <ProductsContext.Provider value={{ products, setProducts }}>
             {children}
         </ProductsContext.Provider>
     )

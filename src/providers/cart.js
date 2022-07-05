@@ -7,14 +7,12 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = (item) => {
         setCart([...cart, item]);
-        console.log(cart)
     }
 
     const removerFromCart = (item) => {
-        const newCart = cart.filter((tshirts) => tshirts.name !== item) ;
+        const newCart = cart.filter((itemCart) => itemCart.name !== item)
         setCart(newCart);
     }
-    //console.log(cart)
 
     return (
         <CartContext.Provider value={{ cart, addToCart, removerFromCart}}>
